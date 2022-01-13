@@ -1,8 +1,4 @@
-<div class="col-md-12" style="padding:20px;">
-    <div class="col-md-12 padding-0">
-        <div class="col-md-8 padding-0">
-            <div class="col-md-12 padding-0">
-                <div class="col-md-6">
+<div class="col-md-6" style="padding:10px;">
                     <div class="panel box-v1">
                         <div class="panel-heading bg-white border-none">
                             <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
@@ -24,8 +20,5 @@
                             <hr/>
                         </div>
                     </div>
-                </div>
-            </div>
      
 </div>
-    </div>

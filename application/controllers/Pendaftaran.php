@@ -15,7 +15,7 @@ class Pendaftaran extends CI_Controller {
     function add() {
         if (isset($_POST['submit'])) {
             $this->Model_pendaftaran->add();
-            redirect('Pendaftaran');
+            redirect('pendaftaran');
         } else {
             $this->template->load('template', 'pendaftaran/add');
         }
@@ -55,7 +55,7 @@ class Pendaftaran extends CI_Controller {
     
     function hapus(){
         $id= $this->uri->segment(3);
-        $this->db->where('id_pasien',$id);
+        $this->db->where('no_cm',$id);
         $this->db->delete('tbl_pasien');
         redirect('pendaftaran');
     }

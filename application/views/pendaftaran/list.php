@@ -48,8 +48,8 @@
                                             </div>
                                         </button> -->
 										
-										<?php echo anchor('pendaftaran/edit/' . $row->no_cm, 'Edit', array('class' => 'btn btn-warning btn-sm')) ?>
-                                    <td><?php echo anchor('pendaftaran/hapus/' . $row->no_cm, 'Hapus', array('class' => 'btn btn-danger btn-sm')) ?></td>
+										<?php echo anchor('pendaftaran/edit/' . $row->no_cm, 'Edit', array('class' => 'btn btn-warning btn-sm', 'title' => "Edit")) ?>
+                                    <td><?php echo anchor('pendaftaran/hapus/' . $row->no_cm, 'Hapus', array('class' => 'btn btn-danger btn-sm', 'title' => "Hapus")) ?></td>
                                 </tr>
                                 <?php
                                 $no++;

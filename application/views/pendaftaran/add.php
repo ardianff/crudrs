@@ -40,7 +40,7 @@
 		</div>
 		<div class="form-group">
 			<label for="alamat">Kode Pos</label>
-			<textarea required="" name="kode_pos" placeholder="Kode Pos" required class="form-control"></textarea>
+			<input required="" type="number" name="kode_pos" placeholder="Kode Pos" required class="form-control"></input>
 		</div>		
 		</div>
         <div class="col-md-12">

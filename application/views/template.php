@@ -43,7 +43,7 @@
         </nav> -->
 
 		<nav class="navbar navbar-expand-lg navbar-dark bg-light">
-  <a class="navbar-brand" href="#">CRUD Data Pasien</a>
+  <a class="navbar-brand" href="<?php echo site_url('dashboard') ?>">CRUD Data Pasien</a>
   <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button> -->
@@ -85,7 +85,7 @@
             <div id="left-menu">
                 <div class="sub-left-menu scroll">
                     <ul class="nav nav-list">
-                        <li class="ripple"><a href="<?php echo site_url('dashboard') ?>"><span class="fa fa-home"></span>Dashborad</a></li>
+                        <li class="ripple"><a href="<?php echo site_url('dashboard') ?>"><span class="fa fa-home"></span>Dashboard</a></li>
                         <li class="ripple"><a href="<?php echo site_url('pendaftaran') ?>"><span class="fa fa-user"></span>Pendaftaran</a></li>
                        </ul>
                 </div>

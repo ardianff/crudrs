@@ -45,7 +45,7 @@
 		</div>
 		<div class="form-group">
 			<label for="alamat">Kode Pos</label>
-			<input required="" name="kode_pos" placeholder="Kode Pos" required value="<?php echo $pasien['kode_pos'] ?>" class="form-control"></input>
+			<input required="" name="kode_pos" type="number" placeholder="Kode Pos" required value="<?php echo $pasien['kode_pos'] ?>" class="form-control"></input>
 		</div>		
 		</div>
         <div class="col-md-12">

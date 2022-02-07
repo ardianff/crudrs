@@ -5,10 +5,11 @@ class Pendaftaran extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->Model('Model_pendaftaran');
+		chek_seesion();
     }
 
     function index() {
-        $data['daftar'] = $this->db->query("SELECT ts.no_ktp,ts.id_pasien,ts.no_cm,ts.nama_pasien,ts.alamat_pasien,ts.jenis_kelamin,ts.status_pernikahan,ts.agama,ts.gol_dar,ts.kode_pos FROM tbl_pasien as ts")->result();
+        $data['daftar'] = $this->db->query("SELECT ts.no_ktp,ts.id_pasien,ts.no_cm,ts.nama_pasien,ts.alamat_pasien,ts.jenis_kelamin,ts.status_pernikahan,ts.agama,ts.gol_dar,ts.keluhan_pasien, ts.tgl_lahir_pasien,ts.tgl_kedatangan_pasien FROM tbl_pasien as ts")->result();
         $this->template->load('template', 'pendaftaran/list', $data);
     }
 
@@ -48,6 +49,17 @@ class Pendaftaran extends CI_Controller {
 			$no_cm           = $this->uri->segment(3);
             $data['pasien'] = $this->db->get_where('tbl_pasien',array('no_cm'=>$no_cm))->row_array();
             $this->template->load('template', 'pendaftaran/edit',$data);
+            
+        }
+    }
+	function view(){
+        if (isset($_POST['submit'])) {
+            $this->Model_pendaftaran->update();
+            redirect('pendaftaran');
+        } else {
+			$no_cm           = $this->uri->segment(3);
+            $data['pasien'] = $this->db->get_where('tbl_pasien',array('no_cm'=>$no_cm))->row_array();
+            $this->template->load('template', 'pendaftaran/view',$data);
             
         }
     }

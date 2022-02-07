@@ -13,15 +13,13 @@ function cmb_dinamis($name, $table, $field, $pk, $selected = NULL, $extra = NULL
     return $cmb;
 }
 
-// function chek_seesion(){
-//     $ci=&get_instance();
-//     $session=$ci->session->userdata('status_login');
-//     if($session!='ok') {
-//         redirect('Auth');
-//     }
-// }
-
-
+function chek_seesion(){
+    $ci=&get_instance();
+    $session=$ci->session->userdata('status_login');
+    if($session!='ok') {
+        redirect('auth');
+    }
+}
 
 function no_cm() {
 	$ci = &get_instance();

@@ -12,7 +12,9 @@ Class Model_pendaftaran extends CI_Model {
             'status_pernikahan' => $this->input->post('status_pernikahan'),
             'agama' => $this->input->post('agama_pasien'),
             'alamat_pasien' => $this->input->post('alamat_pasien'),
-            'kode_pos' => $this->input->post('kode_pos'),
+            'keluhan_pasien' => $this->input->post('keluhan_pasien'),
+            'tgl_kedatangan_pasien' => $this->input->post('tgl_kedatangan_pasien'),
+            'tgl_lahir_pasien' => $this->input->post('tgl_lahir_pasien'),
             'no_cm'=> no_cm()
         );
         $this->db->insert('tbl_pasien',$data);
@@ -27,7 +29,9 @@ Class Model_pendaftaran extends CI_Model {
             'status_pernikahan' => $this->input->post('status_pernikahan'),
             'agama' => $this->input->post('agama_pasien'),
             'alamat_pasien' => $this->input->post('alamat_pasien'),
-            'kode_pos' => $this->input->post('kode_pos'),
+            'keluhan_pasien' => $this->input->post('keluhan_pasien'),
+            'tgl_kedatangan_pasien' => $this->input->post('tgl_kedatangan_pasien'),
+            'tgl_lahir_pasien' => $this->input->post('tgl_lahir_pasien'),
         );
         $no_cm= $this->input->post('no_cm');
         $this->db->where('no_cm',$no_cm);

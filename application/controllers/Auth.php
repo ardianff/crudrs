@@ -15,14 +15,15 @@ Class Auth extends CI_Controller {
         if (isset($_POST['submit'])) {
             $username = $this->input->post('username');
             $password = $this->input->post('password');
-            $result = $this->Model_login->chek_login($username, $password);
+			$passwordx = md5($password);
+            $result = $this->Model_login->chek_login($username, $passwordx);
             if (!empty($result)) {
                 $this->session->set_userdata($result);
                 $this->session->set_userdata(array('status_login'=>'ok'));
-                redirect('Dashboard');
+                redirect('dashboard');
             }else {
                 $this->session->set_flashdata('gagal','username dan password yang anda masukan salah !!!');
-                redirect('Auth');
+                redirect('auth');
             }
         } else {
             $this->load->view('auth/login');
@@ -32,7 +33,7 @@ Class Auth extends CI_Controller {
     function logout() {
         $this->session->sess_destroy();
 
-        redirect('Auth');
+        redirect('auth');
     }
 
 }

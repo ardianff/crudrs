@@ -11,18 +11,17 @@
                     <table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>No</th>
-                                <th>No CM</th>
-                                <th>No KTP</th>
-                                <th>Nama</th>
-                                <th>Jenis Kelamin</th>
-                                <th>Status Pernikahan</th>
-                                <th>Agama</th>
-                                <th>Golongan Darah</th>
-                                <th>Alamat</th>
-                                <th>Kode Pos</th>
-                                <th>Aksi Edit</th>
-                                <th>Aksi Delete</th>
+                                <th class="text-center">No</th>
+                                <th class="text-center">No CM</th>
+                                <th class="text-center">No KTP</th>
+                                <th class="text-center">Nama</th>
+                                <th class="text-center">Jenis Kelamin</th>
+                                <th class="text-center">Alamat</th>
+                                <th class="text-center">Keluhan Pasien</th>
+                                <th class="text-center">Tanggal Kedatangan</th>
+                                <th class="text-center">View</th>
+                                <th class="text-center">Edit</th>
+                                <th class="text-center">Delete</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -31,25 +30,17 @@
                             foreach ($daftar as $row):
                                 ?>
                                 <tr>
-                                    <td><?php echo $no; ?></td>
-                                    <td><?php echo $row->no_cm; ?></td>
-                                    <td><?php echo $row->no_ktp; ?></td>
-                                    <td><?php echo $row->nama_pasien; ?></td>
-                                    <td><?php echo $row->jenis_kelamin; ?></td>
-                                    <td><?php echo $row->status_pernikahan; ?></td>
-                                    <td><?php echo $row->agama; ?></td>
-                                    <td><?php echo $row->gol_dar; ?></td>
-                                    <td><?php echo $row->alamat_pasien; ?></td>
-                                    <td><?php echo $row->kode_pos; ?></td>
-                                    <td>
-                                        <!-- <button class="btn btn-warning btn-sm" onclick="show_by_id(<?php echo $row->id_pasien ?>)" data-toggle="modal" data-target="#exampleModal">
-                                            <div>
-                                                <span>Edit</span>
-                                            </div>
-                                        </button> -->
-										
-										<?php echo anchor('pendaftaran/edit/' . $row->no_cm, 'Edit', array('class' => 'btn btn-warning btn-sm', 'title' => "Edit")) ?>
-                                    <td><?php echo anchor('pendaftaran/hapus/' . $row->no_cm, 'Hapus', array('class' => 'btn btn-danger btn-sm', 'title' => "Hapus")) ?></td>
+                                    <td class="text-center"><?php echo $no; ?></td>
+                                    <td class="text-center"><?php echo $row->no_cm; ?></td>
+                                    <td class="text-center"><?php echo $row->no_ktp; ?></td>
+                                    <td class="text-justify"><?php echo $row->nama_pasien; ?></td>
+                                    <td class="text-center"><?php echo $row->jenis_kelamin; ?></td>
+                                    <td class="text-justify"><?php echo $row->alamat_pasien; ?></td>
+                                    <td class="text-justify"><?php echo $row->keluhan_pasien; ?></td>
+                                    <td class="text-center"><?php echo $row->tgl_kedatangan_pasien; ?></td>
+                                    <td class="text-justify"><?php echo anchor('pendaftaran/view/' . $row->no_cm, '<span class="fa fa-eye"></span>', array('class' => 'btn btn-primary btn-sm', 'title' => "View")) ?></td>
+                                    <td class="text-justify"><?php echo anchor('pendaftaran/edit/' . $row->no_cm, '<span class="fa fa-pen-to-square"></span>', array('class' => 'btn btn-warning btn-sm', 'title' => "Edit")) ?></td>
+                                   	<td class="text-justify"><?php echo anchor('pendaftaran/hapus/' . $row->no_cm, '<span class="fa fa-circle-trash"></span>', array('class' => 'btn btn-danger btn-sm', 'title' => "Hapus")) ?></td>
                                 </tr>
                                 <?php
                                 $no++;
